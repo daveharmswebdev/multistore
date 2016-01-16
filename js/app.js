@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 
   // add item click button and val of input becomes next item
-  $('button').click(function() {
+  $('.addItem').click(function() {
     addItem();
   });
 
@@ -11,10 +11,24 @@ $( document ).ready(function() {
     }
   });
 
+  $('.addStore').click(function() {
+    var gstore = $('input').val();
+    addStore(gstore);
+  });
+
+
+
   function addItem() {
     var gitem = $('input').val();
     console.log(gitem);
     $('ul').append("<li><div class=\"item\"><p>"+gitem+"</p><i class=\"fa fa-minus-square\"></i></div></li>");
+    $('input').val('');
+  }
+
+  function addStore(store) {
+    console.log(store);
+    $('.stores').append('<h3>'+store+'</h3>')
+      .append('<ul id=\''+store+'\'></ul>');
   }
 
   $('ul').on('click', 'i', function() {

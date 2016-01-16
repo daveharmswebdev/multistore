@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Simple Shoppinglist</title>
+    <title>Multi Shoppinglist</title>
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
@@ -21,10 +21,18 @@
         <div class="column full">
           <input type="text" name="item" value="">
         </div>
-        <div class="column full">
-          <button>Add Item</button>
+        <div class="row clearfix">
+          <div class="column fourth"></div>
+          <div class="column fourth">
+            <button class="addStore">Add Store</button>
+          </div>
+          <div class="column fourth">
+            <button class="addItem">Add Item</button>
+          </div>
+          <div class="column fourth"></div>
         </div>
-        <div class="column full">
+        <div class="column full stores">
+          <h3>Trader Joes</h3>
           <ul>
             <li>
               <div class="item"><p>soda</p><i class="fa fa-minus-square"></i></div>
