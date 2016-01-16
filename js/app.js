@@ -17,6 +17,11 @@ $( document ).ready(function() {
     $('ul').append("<li><div class=\"item\"><p>"+gitem+"</p><i class=\"fa fa-minus-square\"></i></div></li>");
   }
 
+  $('ul').on('click', 'i', function() {
+//    $(this).parents('.item').css('background-color', 'yellow');
+      $(this).parents('.item').remove();
+  });
+
   $('ul').sortable({containment: 'parent',
     tolerance: 'pointer'
   });
