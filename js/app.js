@@ -1,7 +1,24 @@
 $( document ).ready(function() {
-    console.log( "ready!" );
-});
 
-$("button").click(function() {
-  console.log("make my day");
+  // add item click button and val of input becomes next item
+  $('button').click(function() {
+    addItem();
+  });
+
+  $('input').keydown(function(enter) {
+    if (enter.keyCode == 13) {
+      addItem();
+    }
+  });
+
+  function addItem() {
+    var gitem = $('input').val();
+    console.log(gitem);
+    $('ul').append("<li><div class=\"item\"><p>"+gitem+"</p><i class=\"fa fa-minus-square\"></i></div></li>");
+  }
+
+  $('ul').sortable({containment: 'parent',
+    tolerance: 'pointer'
+  });
+
 });
