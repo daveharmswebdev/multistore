@@ -1,7 +1,13 @@
 $( document ).ready(function() {
 
+  var selectStore;
+
   // add item click button and val of input becomes next item
-  $('.addItem').click(function() {
+  // $('.addItem').click(function() {
+  //   addItem();
+  // });
+
+  $('.addItem').on('click', function() {
     addItem();
   });
 
@@ -16,8 +22,6 @@ $( document ).ready(function() {
     addStore(gstore);
   });
 
-
-
   function addItem() {
     var gitem = $('input').val();
     console.log(gitem);
@@ -26,18 +30,21 @@ $( document ).ready(function() {
   }
 
   function addStore(store) {
-    console.log(store);
+    var idStore = store.replace(/\s+/g, '');
     $('.stores').append('<h3>'+store+'</h3>')
-      .append('<ul id=\''+store+'\'></ul>');
+      .append('<ul id=\''+idStore+'\'></ul>');
+    $('ul').sortable({containment: 'parent',
+      tolerance: 'pointer'
+    });
+    $('ul').on('click', 'i', function() {
+  //    $(this).parents('.item').css('background-color', 'yellow');
+        $(this).parents('.item').remove();
+    });
+    $('h3').click(function() {
+      selectStore = this.innerHTML;
+      selectStore = selectStore.replace(/\s+/g, '');
+      console.log(selectStore);
+    });
   }
-
-  $('ul').on('click', 'i', function() {
-//    $(this).parents('.item').css('background-color', 'yellow');
-      $(this).parents('.item').remove();
-  });
-
-  $('ul').sortable({containment: 'parent',
-    tolerance: 'pointer'
-  });
 
 });
