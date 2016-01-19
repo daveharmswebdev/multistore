@@ -107,3 +107,11 @@ li {
   float: right;
   padding-right: 1rem;
 }
+
+.selected {
+  color: blue;
+}
+
+.notselected {
+  color: green;
+}
