@@ -82,6 +82,14 @@ ul {
   padding: 0;
 }
 
+.selected {
+  color: blue;
+}
+
+.notselected {
+  color: green;
+}
+
 li {
   list-style: none;
   width: 20rem;
@@ -93,6 +101,7 @@ li {
   height: 1.8rem;
   padding: 0.3rem;
   border-radius: 0.9rem;
+  color: black;
 }
 
 .item > p {
@@ -102,16 +111,26 @@ li {
   padding-left: 2rem;
 }
 
-.item > i {
+.item > .fa-minus-square {
   display: inline;
   float: right;
   padding-right: 1rem;
 }
 
-.selected {
-  color: blue;
+.item > .fa-check-square {
+  display: inline;
+  float: left;
+  padding-left: 1rem;
 }
 
-.notselected {
-  color: green;
+.uncheck {
+  text-decoration: none;
+  font-style: normal;
+  background-color: none;
+}
+
+.check {
+  text-decoration: line-through;
+  font-style: italic;
+  background-color: pink;
 }
